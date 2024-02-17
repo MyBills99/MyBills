@@ -108,90 +108,108 @@
     <title>Product Carousel</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product {
+            width: 90%; /* Anpassen der Breite der Produkte */
+            margin: auto; /* Zentrieren der Produkte */
+        }
+        .product img {
+            width: 100%; /* Bildbreite anpassen */
+            height: auto; /* Automatische Anpassung der Höhe */
+            object-fit: cover; /* Bild skalieren, um den Container zu füllen, ohne das Seitenverhältnis zu ändern */
+        }
+
+        /* Benutzerdefinierte Farbe für die Navigationspfeile */
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: blue; /* Ändern Sie die Hintergrundfarbe der Pfeile hier */
+        }
+
+        /* Anpassung der Größe des Videos */
+        .carousel-item video {
+            width: 100%; /* Breite auf 100% des Elternelements setzen */
+            height: auto; /* Automatische Anpassung der Höhe */
+            max-height: 1000px; /* Maximale Höhe des Videos festlegen */
+            object-fit: cover; /* Video skalieren, um den Container zu füllen, ohne das Seitenverhältnis zu ändern */
+        }
+    </style>
 </head>
 <body>
-
-
-            <div class="product">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="20.jpg" alt="20€ Bill" style="width: 100%; height: 100vh; object-fit: cover;">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="20 back.jpg" alt="20€ Bill back" style="width: 100%; height: 100vh; object-fit: cover;">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="uv scan 20.jpg" alt="uv scan 20" style="width: 100%; height: 100vh; object-fit: cover;">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="uv scan 20 back.jpg" alt="uv scan 20 back" style="width: 100%; height: 100vh; object-fit: cover;">
-                        </div>
-                        <div class="carousel-item">
-                            <video controls width="100%" height="700vh" style="object-fit: cover;">
-                                <source src="fake notes.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                    <!-- Carousel navigation controls -->
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-
-                <h2>Fake Bills</h2>
-                <p>Fake Euro Bills 500€ in 20€ Notes</p>
-                <p>Price: $50</p>
-                <button class="add-to-cart" data-name="Fake Euro Bills 500€ in 20€ Notes" data-price="50">Add to Shopping Cart</button>
+<div class="product">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="20.jpg" alt="20€ Bill">
+            </div>
+            <div class="carousel-item">
+                <img src="20 back.jpg" alt="20€ Bill back">
+            </div>
+            <div class="carousel-item">
+                <img src="uv scan 20.jpg" alt="uv scan 20">
+            </div>
+            <div class="carousel-item">
+                <img src="uv scan 20 back.jpg" alt="uv scan 20 back">
+            </div>
+            <div class="carousel-item">
+                <video controls width="100%" style="object-fit: cover;">
+                    <source src="fake notes.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
-
-            <div class="product">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="50.jpg" alt="50€ Bill" style="width: 100%; height: 100vh; object-fit: cover;">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="50 back.jpg" alt="50€ Bill back" style="width: 100%; height: 100vh; object-fit: cover;">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="uv scan 50.jpg" alt="uv scan 50" style="width: 100%; height: 100vh; object-fit: cover;">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="uv scan 50 back.jpg" alt="uv scan 50 back" style="width: 100%; height: 100vh; object-fit: cover;">
-                        </div>
-                        <div class="carousel-item">
-                            <video controls width="100%" height="700vh" style="object-fit: cover;">
-                                <source src="fake notes.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                    <!-- Carousel navigation controls -->
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-
-                <h2>Fake Bills</h2>
-                <p>Fake Euro Bills 500€ in 50€ Notes</p>
-                <p>Price: $50</p>
-                <button class="add-to-cart" data-name="Fake Euro Bills 500€ in 50€ Notes" data-price="50">Add to Shopping Cart</button>
-            </div>
-        </div>
+        <!-- Carousel navigation controls -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
+
+    <h2>Fake Bills</h2>
+    <p>Fake Euro Bills 500€ in 20€ Notes</p>
+    <p>Price: $50</p>
+    <button class="add-to-cart" data-name="Fake Euro Bills 500€ in 20€ Notes" data-price="50">Add to Shopping Cart</button>
+</div>
+
+<div class="product">
+    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="50.jpg" alt="50€ Bill">
+            </div>
+            <div class="carousel-item">
+                <img src="50 back.jpg" alt="50€ Bill back">
+            </div>
+            <div class="carousel-item">
+                <img src="uv scan 50.jpg" alt="uv scan 50">
+            </div>
+            <div class="carousel-item">
+                <img src="uv scan 50 back.jpg" alt="uv scan 50 back">
+            </div>
+            <div class="carousel-item">
+                <video controls width="100%" style="object-fit: cover;">
+                    <source src="fake notes.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <!-- Carousel navigation controls -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <h2>Fake Bills</h2>
+    <p>Fake Euro Bills 500€ in 50€ Notes</p>
+    <p>Price: $50</p>
+    <button class="add-to-cart" data-name="Fake Euro Bills 500€ in 50€ Notes" data-price="50">Add to Shopping Cart</button>
 </div>
 
 <!-- Bootstrap JavaScript -->
@@ -208,26 +226,6 @@
 
 </body>
 </html>
-
-
-
-
-
-<!-- Bootstrap JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- Initialize Carousel -->
-<script>
-    $(document).ready(function(){
-        $('.carousel').carousel();
-    });
-</script>
-
-</body>
-</html>
-
 
 
 
