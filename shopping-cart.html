@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #232f3e;
+            color: #fff;
+        }
+        .total {
+            text-align: right;
+            font-weight: bold;
+        }
+        .quantity-input {
+            width: 80px;
+        }
+        footer {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        /* Styling for the button */
+        #confirm-payment {
+            background-color: #4CAF50; /* Green background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 15px 32px; /* Padding */
+            text-align: center; /* Center text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make it inline block */
+            font-size: 16px; /* Font size */
+            margin: 4px 2px; /* Margin */
+            transition-duration: 0.4s; /* Transition duration */
+            cursor: pointer; /* Cursor on hover */
+        }
+        #confirm-payment:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Shopping Cart</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shopping-cart.html">Shopping Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price per Unit</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Products will be inserted here -->
+        </tbody>
+    </table>
+    <div class="total" id="cart-total">
+        <!-- Total price will be inserted here -->
+    </div>
+</div>
+<div class="container">
+    <h1>Bitcoin Payments</h1>
+    <p>Please send the amount to the following Bitcoin address:</p>
+    <p><strong>bc1qktkfd3e2ma3z762yf3q8tyx4atg28wvnxan86c</strong></p>
+    <p>After you have sent the payment, please enter your details and click "Confirm Payment" to proceed.</p>
+    <p>If you dont have a Bitcoin Wallet you can buy bitcoin here: <a href="https://changenow.io/?from=eur&to=ltc&fiatMode=true">https://changenow.io/?from=eur&to=ltc&fiatMode=true</a>
+ if you can't do that either contact me and we will find a solution ;)
+
+    <!-- Bitcoin address and form inputs -->
+    <form id="payment-form">
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" required><br><br>
+        
+        <label for="zip">Zip Code:</label><br>
+        <input type="text" id="zip" name="zip" required><br><br>
+        
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city" required><br><br>
+        
+        <label for="country">Country:</label><br>
+        <input type="text" id="country" name="country" required><br><br>
+        
+        <button type="submit" id="confirm-payment">Confirm Payment</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 MyBills</p>
+</footer>
+
+<script>
+    // Retrieve cart items from session storage
+    let cart = sessionStorage.getItem('cart');
+    cart = cart ? JSON.parse(cart) : [];
+
+    // Function to calculate total price of items in cart
+    function calculateTotal() {
+        let total = 0;
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+        });
+        return total.toFixed(2);
+    }
+
+    // Display cart items in the table
+    const cartItemsContainer = document.getElementById('cart-items');
+    cart.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>
+                <input class="quantity-input" type="number" min="1" value="${item.quantity}" data-name="${item.name}">
+                <button class="update-quantity">Update</button>
+            </td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td>$${(item.price * item.quantity).toFixed(2)}</td>
+        `;
+        cartItemsContainer.appendChild(row);
+    });
+
+    // Display total price
+    const cartTotalContainer = document.getElementById('cart-total');
+    cartTotalContainer.textContent = `Total: $${calculateTotal()}`;
+
+    // Update quantity and total price when quantity is changed
+    document.querySelectorAll('.update-quantity').forEach(button => {
+        button.addEventListener('click', () => {
+            const input = button.parentElement.querySelector('.quantity-input');
+            const quantity = parseInt(input.value);
+            const name = input.getAttribute('data-name');
+            const itemIndex = cart.findIndex(item => item.name === name);
+            if (itemIndex !== -1) {
+                cart[itemIndex].quantity = quantity;
+                sessionStorage.setItem('cart', JSON.stringify(cart));
+                const totalPriceCell = input.parentElement.nextElementSibling.nextElementSibling;
+                totalPriceCell.textContent = `$${(cart[itemIndex].price * quantity).toFixed(2)}`;
+                cartTotalContainer.textContent = `Total: $${calculateTotal()}`;
+            }
+        });
+    });
+
+    // Remove cart items from session storage after payment confirmation
+    document.getElementById('confirm-payment').addEventListener('click', function(event) {
+        event.preventDefault();
+        sessionStorage.removeItem('cart');
+        alert('Thank you for your payment. Your order is being processed.');
+        location.reload(); // Refresh the page
+    });
+</script>
+
+</body>
+</html>
+

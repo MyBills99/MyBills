@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBills</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            width: 40%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .product h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .product p {
+            margin-bottom: 10px;
+        }
+        .add-to-cart {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .add-to-cart:hover {
+            background-color: #004080;
+        }
+        footer {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to MyBills</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shopping-cart.html">Shopping Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+    </ul>
+</nav>
+
+<section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Carousel</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+            <div class="product">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="20.jpg" alt="20€ Bill" style="width: 100%; height: 100vh; object-fit: cover;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="20 back.jpg" alt="20€ Bill back" style="width: 100%; height: 100vh; object-fit: cover;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="uv scan 20.jpg" alt="uv scan 20" style="width: 100%; height: 100vh; object-fit: cover;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="uv scan 20 back.jpg" alt="uv scan 20 back" style="width: 100%; height: 100vh; object-fit: cover;">
+                        </div>
+                        <div class="carousel-item">
+                            <video controls width="100%" height="700vh" style="object-fit: cover;">
+                                <source src="fake notes.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Carousel navigation controls -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <h2>Fake Bills</h2>
+                <p>Fake Euro Bills 500€ in 20€ Notes</p>
+                <p>Price: $50</p>
+                <button class="add-to-cart" data-name="Fake Euro Bills 500€ in 20€ Notes" data-price="50">Add to Shopping Cart</button>
+            </div>
+        </div>
+
+            <div class="product">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="50.jpg" alt="50€ Bill" style="width: 100%; height: 100vh; object-fit: cover;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="50 back.jpg" alt="50€ Bill back" style="width: 100%; height: 100vh; object-fit: cover;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="uv scan 50.jpg" alt="uv scan 50" style="width: 100%; height: 100vh; object-fit: cover;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="uv scan 50 back.jpg" alt="uv scan 50 back" style="width: 100%; height: 100vh; object-fit: cover;">
+                        </div>
+                        <div class="carousel-item">
+                            <video controls width="100%" height="700vh" style="object-fit: cover;">
+                                <source src="fake notes.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Carousel navigation controls -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <h2>Fake Bills</h2>
+                <p>Fake Euro Bills 500€ in 50€ Notes</p>
+                <p>Price: $50</p>
+                <button class="add-to-cart" data-name="Fake Euro Bills 500€ in 50€ Notes" data-price="50">Add to Shopping Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Initialize Carousel -->
+<script>
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+<!-- Bootstrap JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Initialize Carousel -->
+<script>
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+  
+</section>
+
+<footer>
+    <p>&copy; 2024 MyBills</p>
+</footer>
+
+<script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.getAttribute('data-name');
+            const price = parseFloat(button.getAttribute('data-price'));
+            const item = { name, price };
+            let cart = sessionStorage.getItem('cart');
+            cart = cart ? JSON.parse(cart) : [];
+            cart.push(item);
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            alert('The product has been added to the cart!');
+        });
+    });
+</script>
+
+</body>
+</html>
