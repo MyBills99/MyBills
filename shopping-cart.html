@@ -184,15 +184,15 @@
                 <input class="quantity-input" type="number" min="1" value="${item.quantity}" data-name="${item.name}">
                 <button class="update-quantity">Update</button>
             </td>
-            <td>$${item.price.toFixed(2)}</td>
-            <td>$${(item.price * item.quantity).toFixed(2)}</td>
+            <td>${item.price.toFixed(2)} €</td>
+            <td>${(item.price * item.quantity).toFixed(2)} €</td>
         `;
         cartItemsContainer.appendChild(row);
     });
 
     // Display total price
     const cartTotalContainer = document.getElementById('cart-total');
-    cartTotalContainer.textContent = `Total: $${calculateTotal()}`;
+    cartTotalContainer.textContent = `Total: ${calculateTotal()} €`;
 
     // Update quantity and total price when quantity is changed
     document.querySelectorAll('.update-quantity').forEach(button => {
@@ -205,8 +205,8 @@
                 cart[itemIndex].quantity = quantity;
                 sessionStorage.setItem('cart', JSON.stringify(cart));
                 const totalPriceCell = input.parentElement.nextElementSibling.nextElementSibling;
-                totalPriceCell.textContent = `$${(cart[itemIndex].price * quantity).toFixed(2)}`;
-                cartTotalContainer.textContent = `Total: $${calculateTotal()}`;
+                totalPriceCell.textContent = `${(cart[itemIndex].price * quantity).toFixed(2)} €`;
+                cartTotalContainer.textContent = `Total: ${calculateTotal()} €`;
             }
         });
     });
